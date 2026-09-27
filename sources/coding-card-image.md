@@ -1,0 +1,5 @@
+# Coding card image
+
+Saved asset: `public/images/coding-card.jpg`. Generated with the built-in image generation tool and optimised to a 960-pixel JPEG. Replaces the second homepage card image only.
+
+Prompt: Use case: photorealistic-natural. Asset type: landscape 3:2 website service-card photograph. Primary request: a coding image for a Web & Software Development card. Close over-the-shoulder view of a developer at a desk writing software, a large monitor prominently displaying a dark code editor with believable multicoloured syntax, indented functions and a small terminal panel. The code editor should dominate the composition and clearly communicate programming, not website design or a browser preview. Natural daylight, light oak desk, cream workspace, subtle sage plants and navy clothing to match a warm, approachable IT company website. Centre monitor and keyboard to work with a wide 16:9 crop. No brand logos, watermarks or text overlays; code is illustrative and contains no credentials or personal information.

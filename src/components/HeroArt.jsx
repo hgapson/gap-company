@@ -1,3 +1,13 @@
 export default function HeroArt() {
-  return <div className="hero-art" aria-label="Abstract technology illustration"><div className="orb orb-one" /><div className="orb orb-two" /><div className="grid" /><div className="device-window"><div className="window-top"><i /><i /><i /><span>your-business.co.nz</span></div><div className="window-body"><div className="window-label">A better digital presence</div><div className="window-title">Built for the people you serve.</div><div className="fake-button" /><div className="bars"><b /><b /><b /></div></div></div><div className="floating-card card-support"><span className="icon">✦</span><div><small>IT support</small><strong>Here when you need us</strong></div></div><div className="floating-card card-secure"><span className="icon">✓</span><div><small>Security first</small><strong>Protected & prepared</strong></div></div></div>
+  return <div className="hero-art">
+    <img
+      className="hero-photo"
+      src="/images/it-infrastructure-hero.jpg"
+      alt="Man viewed from behind working at a computer beside a server rack with organised network cables."
+      width="1448"
+      height="1086"
+      fetchPriority="high"
+      decoding="async"
+    />
+  </div>
 }

@@ -1,5 +1,5 @@
 import Brand from './Brand'
-
-export default function Header({ menuOpen, onMenuToggle, onNavigate }) {
-  return <header className={`site-header ${menuOpen ? 'open' : ''}`}><Brand /><button className="menu-button" onClick={onMenuToggle} aria-expanded={menuOpen} aria-controls="nav">Menu</button><nav id="nav" aria-label="Main navigation"><a onClick={onNavigate} href="#services">Services</a><a onClick={onNavigate} href="#why-us">Why us</a><a onClick={onNavigate} href="#process">How it works</a><a onClick={onNavigate} className="nav-cta" href="#contact">Get support</a></nav></header>
+export const navigation = [['/', 'Home'], ['/about', 'About Us'], ['/it-services', 'IT Services'], ['/products', 'IT Products'], ['/web-development', 'Web Development'], ['/business-solutions', 'Business Solutions'], ['/contact', 'Contact']]
+export default function Header({ menuOpen, onMenuToggle, onNavigate, path }) {
+ return <header className={`site-header ${menuOpen ? 'open' : ''}`}><Brand /><button className="menu-button" onClick={onMenuToggle} aria-expanded={menuOpen} aria-controls="nav">{menuOpen ? 'Close' : 'Menu'}</button><nav id="nav" aria-label="Main navigation">{navigation.map(([url,label]) => <a key={url} href={`#${url}`} onClick={onNavigate} aria-current={path === url ? 'page' : undefined} className={url === '/contact' ? 'nav-cta' : ''}>{label}</a>)}</nav></header>
 }

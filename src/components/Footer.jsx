@@ -1,12 +1,5 @@
 import Brand from './Brand'
-
+import { navigation } from './Header'
 export default function Footer() {
-  return <footer className="site-footer">
-    <div className="footer-brand"><Brand /><p>Practical technology. Personal service.</p></div>
-    <div className="footer-links" aria-label="Footer navigation">
-      <div><strong>Explore</strong><a href="#services">Services</a><a href="#why-us">Why us</a><a href="#process">How it works</a></div>
-      <div><strong>Get in touch</strong><a href="#contact">Start a conversation</a><a href="#contact">Request IT support</a><a href="#contact">Website enquiries</a></div>
-    </div>
-    <div className="footer-bottom"><span>© {new Date().getFullYear()} GAP Tech Solutions</span><a href="#top">Back to top ↑</a></div>
-  </footer>
+ return <footer className="site-footer"><div className="footer-brand"><Brand /><p>Support. Build. Innovate.</p><p>Practical IT services and software for people and business.</p></div><div className="footer-links"><div><strong>Services & products</strong>{navigation.filter(([url]) => ['/it-services', '/products', '/web-development', '/business-solutions'].includes(url)).map(([url,label]) => <a key={url} href={`#${url}`}>{label}</a>)}</div><div><strong>GAP TECH</strong><a href="#/about">About us</a><a href="#/contact">Start a conversation</a><a href="#/">Home</a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} GAP TECH</span><span>Practical technology. Personal service.</span></div></footer>
 }
