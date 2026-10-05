@@ -1,54 +1,59 @@
-# GAP TECH website walkthrough
+# GAP TECH website
 
-The supplied brief positions GAP TECH as a full IT solutions company, with services and products under one brand. This implementation retains the existing React, Vite, Tailwind and logo setup.
+## Homepage
 
-## 1. Establish the company positioning
+The homepage prioritises services that customers can enquire about now: IT support, websites and business workflows. Each card opens Contact with the relevant interest selected. It also includes four owner-confirmed website projects (Waikato Refugee Forum, Waikato Navigate Trust, Ephata Initiatives Trust and DearEcho Project), audience groups, an introduction to the GAP TECH approach, the working process, six accessible FAQ disclosures and a final enquiry action. Planned products appear in a smaller section and remain clearly labelled unavailable.
 
-The homepage introduces IT support, software and digital solutions for businesses and communities. Three equally prominent cards lead to IT services, web/software development and products. IT support remains the first card so the website does not appear to be only an app catalogue.
+The existing cream, green and dark-blue design is retained. Homepage content lives in `src/sections/Home.jsx`.
 
-## 2. Organise the navigation
+No testimonials, client logos, results, founder credentials or personal photos have been invented. The owner supplied the four project names; URLs, project details, imagery and permission-approved feedback can be added when available. Add a real personal introduction when supplied. Confirm the existing Hamilton and nationwide support claims on Contact before launch.
 
-Seven main pages follow the brief: Home, IT Services, Software Products, Web Development, Business Solutions, About and Contact. Header and footer links share this structure. Mobile visitors use a collapsible menu. Hash routes work on static hosts without server rewrite configuration; browser back/forward and direct product links are supported.
+## Routing and search visibility
 
-The application and page layouts are in `src/main.jsx`. Navigation is in `src/components/Header.jsx` and the footer is in `src/components/Footer.jsx`.
+Pages now use real paths, such as `/it-services`, instead of hash routes. Navigation uses ordinary page links, so native back/forward, opening a new tab and rendered links work without a client-side router. Existing `#/...` bookmarks redirect to the equivalent path when JavaScript loads.
 
-## 3. Explain the services
+`npm run build` runs `scripts/build.mjs`. It creates full HTML for all 12 public pages, plus `404.html`, before React hydrates the page. The output includes unique page titles and descriptions, Open Graph metadata and working links. `src/seo.js` supplies shared route metadata. Product descriptions accurately identify concepts as planned.
 
-IT Services covers all eight requested areas: support, computer setup/troubleshooting, networks, Microsoft 365/email, cloud support, cybersecurity basics, consulting and maintenance. Web Development covers websites, portals, custom applications and ongoing care. Business Solutions explains how services combine around business and community needs.
+Without `SITE_URL`, generated pages contain `noindex, follow`: development previews should not compete with the future public site. No fake domain, canonical URL or sitemap is generated. `robots.txt` permits crawling so a publicly accessible preview's noindex tag can be read. This is not access control for private content.
 
-## 4. Present products honestly
+When ready to launch, set `SITE_URL` to the final HTTPS origin in `.env.production.local` or the deployment environment and rebuild. Example syntax (replace the example address):
 
-`src/data/products.js` contains GAP ServiceDesk, GAP CRM, GAP Volunteer, GAP Property and GAP Education. Each has a dedicated page with its problem, audience, proposed features, illustrative interface, future demo enquiry and quote/customisation enquiry.
+```sh
+SITE_URL=https://your-domain.example npm run build
+```
 
-The source document describes systems to develop, so all five are labelled planned. Interface previews are explicitly illustrations, not real screenshots. No live demo, release date or price is invented. GAP Education features are proposed because the brief gives its name but no scope.
+This enables indexing on known pages and generates absolute canonical URLs, social page URLs, Organization structured data, and `sitemap.xml`. A stable public hosting address can also be used; purchasing a domain is not required to build or preview. Search engines cannot index a site that only runs locally, and technical readiness does not guarantee rankings.
 
-The roadmap also includes the remaining ideas. Volunteer management and property maintenance are represented by the named products; NGO CRM is represented by GAP CRM. Job readiness includes the application-manager concept. These entries describe possibilities rather than functioning software.
+Deploy `dist` as a static site, preserving its directory structure. Configure hosting to serve each directory's `index.html`, normalise page URLs to trailing slashes, and return the generated `404.html` with HTTP 404 for unknown paths. Do not use an all-paths-to-homepage SPA fallback: that would serve the wrong initial content and metadata. Hosting redirects and actual HTTP status codes must be verified with the chosen host. Submit the sitemap in Search Console after publication and ownership verification.
 
-## 5. Handle enquiries
+## Enquiries
 
-The enquiry form validates required name, email and message fields. Product links preselect the relevant demo or quotation interest. Submitting prepares an email addressed to hgapson@gmail.com using the visitor’s email app. The visitor reviews and sends the message there. Form values are retained, and a direct email link is available. This website does not send automatically or store enquiries.
+The current form prepares an email to `hgapson@gmail.com` in the visitor's email app. It does not send or store messages automatically, and its labels explain that. Interest query parameters preselect the service after hydration. A direct email link remains available.
 
-For direct delivery without a visitor’s email app, a form delivery service or backend would need to be configured. A receiving email address alone does not create a server-side delivery service. Do not put private email-service credentials into frontend code.
+Direct form delivery still requires a configured backend or a form delivery service and receiving account. No service was available/configured during this change. Do not put private mail-service credentials into browser code. A business-domain address can replace the current address after the domain and mailbox exist.
 
-## 6. Review the design and accessibility
+## Development and verification
 
-The existing cream, green and dark-blue visual style and logo are retained. Added layouts adapt to smaller screens. Forms have labels, navigation exposes the current page, keyboard focus is visible, there is a skip link, and page changes update the browser title and focus the main content.
+```sh
+npm run dev
+npm run build
+node scripts/check-build.mjs
+npm run preview
+```
 
-## 7. Run and check
+The production and development build modes were verified. Checks cover all 12 rendered pages, one primary heading per page, unique titles, internal page links, referenced assets, indexing settings, canonical URLs, sitemap entries and noindex on the 404 page. To check a launch build, pass the same `SITE_URL` to both build and check commands.
 
-Run `npm run dev` and open the URL shown by Vite. Run `npm run build` to produce the static site in `dist`; run `npm run preview` to preview that build.
+Local HTTP checks also passed for the homepage, IT services page and contact page with an interest query. No browser was connected for visual or interactive checks in this session. Before publication, review desktop and mobile layouts, keyboard interaction, the mobile menu, FAQ disclosures, legacy hash redirects, service interest preselection and the email handoff. Test direct page requests and 404 responses on the final host.
 
-The production build passed. Browser-based visual and interaction verification was unavailable in this session because no browser was connected. Before launch, check desktop and phone layouts, the mobile menu, all product links, back/forward navigation, required-field validation and the email enquiry handoff in a browser.
+## Project portfolio assets
 
-## Information still needed before publication
+Project names, descriptions and owner-confirmed service roles live in `src/data/projects.js`. Website development and IT support are listed for WRF, WNT and Ephata; DearEcho lists website development only. Summaries reflect the screenshots supplied in chat, without claiming measured results or endorsements.
 
-- Confirm the existing Hamilton location and nationwide service coverage.
-- Enquiries use hgapson@gmail.com through the visitor’s email app. Direct server-side delivery is not configured.
-- Confirm which products are genuinely planned, in development or available.
-- Replace illustrative previews with real screenshots and demos when products exist.
-- Confirm prices, actual product scope and launch dates before publishing those claims.
-- Choose hosting and the domain. This local implementation has not been deployed.
+The four supplied screenshots are stored in `public/images/` and linked explicitly in the project data:
 
-## Design preference
+- `waikato-refugee-forum.png`
+- `waikato-navigate-trust.png`
+- `ephata-initiatives-trust.png`
+- `dearecho.png`
 
-Keep the existing visual design, colours and layout. Further changes should focus on the concept, content and necessary functionality.
+Public assets use `/images/...` URLs. Rebuild with `npm run build` to update the production preview after changing images or project data. Public website URLs are still pending.
