@@ -4,7 +4,7 @@ const pages = {
  '/it-services': ['IT Support, Networks & Microsoft 365', 'Get practical help with computers, networks, Microsoft 365, email, cloud systems and ongoing IT maintenance. Explore GAP TECH IT services.'],
  '/web-development': ['Websites & Custom Software Development', 'Plan a business website, customer portal or custom application with GAP TECH. Explore web development, integrations and ongoing website care.'],
  '/business-solutions': ['Technology Solutions for Business & Community', 'Explore IT support, collaboration tools and custom workflows for small businesses, NGOs and community organisations with GAP TECH.'],
- '/about': ['About GAP TECH', 'Learn about GAP TECH’s approach to practical IT support, web development and software: clear communication and solutions shaped around your organisation.'],
+ '/about': ['About GAP TECH', 'Established in 2024, GAP TECH has helped more than 20 businesses and organisations. Discover our approach to IT support, websites and digital solutions.'],
  '/contact': ['Contact GAP TECH', 'Discuss an IT problem, website or custom software project with GAP TECH. Tell us your goals, current setup and what you would like to improve.'],
  '/products': ['Planned Software Products', 'Explore GAP TECH’s planned software concepts for service desks, CRM, volunteers, property maintenance and education. Products are not yet available.'],
 }

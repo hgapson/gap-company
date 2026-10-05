@@ -57,3 +57,7 @@ The four supplied screenshots are stored in `public/images/` and linked explicit
 - `dearecho.png`
 
 Public assets use `/images/...` URLs. Rebuild with `npm run build` to update the production preview after changing images or project data. Public website URLs are still pending.
+
+## About page
+
+`src/sections/About.jsx` presents GAP TECH’s approach, confirmed website and IT support experience, and its service and planned-product direction. It links to the homepage portfolio. A founder biography, qualifications, photo remain pending owner-provided details. The owner confirmed GAP TECH started in 2024 and has helped more than 20 businesses and organisations. The About page includes these facts, illustrative service images, actual project screenshots and simple principle icons. No credentials or client endorsements are invented.

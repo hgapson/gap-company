@@ -3,7 +3,7 @@ import Footer from './components/Footer'
 import Header, { navigation } from './components/Header'
 import Home from './sections/Home'
 import { getMetadata } from './seo'
-import Audience from './sections/Audience'
+import About from './sections/About'
 import Contact from './sections/Contact'
 import Process from './sections/Process'
 import { products, roadmap } from './data/products'
@@ -42,7 +42,7 @@ export default function App({ initialRoute = '/' }) {
  else if (path === '/business-solutions') page = <ServicePage type="business" />
  else if (path === '/products') page = <Products />
  else if (product) page = <Product product={product} />
- else if (path === '/about') page = <><Intro eyebrow="About GAP TECH" title="Practical technology. Personal service.">GAP TECH provides practical IT services, support and software solutions for individuals, businesses and organisations.</Intro><section className="section services"><h2>Support. Build. Innovate.</h2><p className="page-lead">Our approach brings managed IT services, custom development and planned software products together. We focus on understanding your needs, explaining the options clearly and choosing tools that make everyday work easier.</p><Cards items={[["People first", "Clear communication and practical help for people with different levels of technical confidence."], ["Built around your work", "Solutions shaped around small businesses, community organisations and growing teams."]]} /></section><Audience /><CTA /></>
+ else if (path === '/about') page = <About />
  else if (path === '/contact') page = <Contact key={route} interest={new URLSearchParams(query).get('interest') || ''} />
  else page = <><Intro eyebrow="Page not found" title="Let’s get you back on track.">This page does not exist. Use the navigation to explore our services and products.</Intro><section className="section"><a className="button dark" href="/">Return home →</a></section></>
  return <><a className="skip-link" href="#main-content" onClick={event => { event.preventDefault(); document.getElementById('main-content').focus(); document.getElementById('main-content').scrollIntoView() }}>Skip to content</a><Header path={path} menuOpen={menuOpen} onMenuToggle={() => setMenuOpen(!menuOpen)} onNavigate={() => setMenuOpen(false)} /><main id="main-content" tabIndex="-1">{page}</main><Footer /></>

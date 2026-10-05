@@ -15,7 +15,7 @@ try {
   assert(html.includes('<meta name="description" content="'))
   for (const match of html.matchAll(/<a\b[^>]*href="(\/[^"]*)"/g)) {
    if (match[1].startsWith('/assets/')) continue
-   const path = match[1].split('?')[0].replace(/\/$/,'')||'/'
+   const path = match[1].split(/[?#]/)[0].replace(/\/$/,'')||'/'
    assert(routes.includes(path),`Broken page link ${path} in ${route}`)
   }
   for (const match of html.matchAll(/(?:src|href)="(\/(?:images|assets)\/[^"?]+|\/gap-tech-logo.png)"/g)) await access(resolve('dist','.'+match[1]))
