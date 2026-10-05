@@ -2,7 +2,7 @@
 
 ## Homepage
 
-The homepage prioritises services that customers can enquire about now: IT support, websites and business workflows. Each card opens Contact with the relevant interest selected. It also includes four owner-confirmed website projects (Waikato Refugee Forum, Waikato Navigate Trust, Ephata Initiatives Trust and DearEcho Project), audience groups, an introduction to the GAP TECH approach, the working process, six accessible FAQ disclosures and a final enquiry action. Planned products appear in a smaller section and remain clearly labelled unavailable.
+The homepage prioritises services that customers can enquire about now: IT support, websites and business workflows. Each card opens Contact with the relevant interest selected. It also includes four owner-confirmed website projects (Waikato Refugee Forum, Waikato Navigate Trust, Ephata Initiatives Trust and DearEcho Project), audience groups, an introduction to the GAP TECH approach, the working process and a final enquiry action. The Contact page includes six accessible FAQ disclosures below the enquiry form. Planned products appear in a smaller section and remain clearly labelled unavailable.
 
 The existing cream, green and dark-blue design is retained. Homepage content lives in `src/sections/Home.jsx`.
 
