@@ -65,3 +65,7 @@ Public assets use `/images/...` URLs. Rebuild with `npm run build` to update the
 ## Navigation
 
 Web Development is grouped under the IT Services disclosure in the header, alongside IT Support & Services. Its dedicated page URL and footer link remain available. The disclosure uses native keyboard/touch behaviour, closes on Escape (returning focus), outside pointer interaction and focus leaving the group, and stacks within the mobile navigation.
+
+## Service enquiry pages
+
+IT Services and Web Development include service-specific contact links, a tailored four-step process, and a short enquiry guide. The contact interest is passed in the URL and selected after hydration. FAQs remain on Contact. Relevant experience sections have been removed from both service pages; project examples remain on Home and About. Shared sections live in `src/sections/ServiceDetails.jsx`.
