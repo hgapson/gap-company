@@ -61,3 +61,7 @@ Public assets use `/images/...` URLs. Rebuild with `npm run build` to update the
 ## About page
 
 `src/sections/About.jsx` presents GAP TECH’s approach, confirmed website and IT support experience, and its service and planned-product direction. It links to the homepage portfolio. A founder biography, qualifications, photo remain pending owner-provided details. The owner confirmed GAP TECH started in 2024 and has helped more than 20 businesses and organisations. The About page includes these facts, illustrative service images, actual project screenshots and simple principle icons. No credentials or client endorsements are invented.
+
+## Navigation
+
+Web Development is grouped under the IT Services disclosure in the header, alongside IT Support & Services. Its dedicated page URL and footer link remain available. The disclosure uses native keyboard/touch behaviour, closes on Escape (returning focus), outside pointer interaction and focus leaving the group, and stacks within the mobile navigation.
